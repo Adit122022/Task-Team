@@ -1,6 +1,6 @@
 const userModel = require('../models/user.model')
 module.exports.indexController =(req,res)=>{
-    res.send("HELLO WORLD!");
+    res.render('form');
 }
 module.exports.registerController = async(req,res)=>{
     console.log(req.query);

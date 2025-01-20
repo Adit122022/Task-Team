@@ -13,7 +13,7 @@ const { username , email , bio ,profession , imageURL } = req.query;
         imageURL,
     });
     await newUser.save();
-    res.send("Register");
+    res.send(newUser);
 }
 
 module.exports.userController = async(req,res)=>{
@@ -26,10 +26,7 @@ module.exports.userController = async(req,res)=>{
       res.render('card', { cards }); 
 }
 
-// module.exports.updateUserController = async(req,res)=>{
-//     const users = await userModel.findOneAndUpdate({email:req.query.email},{username: req.query.username} );
-//     res.send(users);
-// }
+
 module.exports.cardController=async(req,res)=>{
     const name=req.params.name;
 

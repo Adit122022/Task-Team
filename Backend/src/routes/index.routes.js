@@ -4,14 +4,13 @@ const {indexController, cardController} = require('../controllers/index.controll
 const {registerController} = require('../controllers/index.controller')
 const {userController} = require('../controllers/index.controller')
 // const {deleteUserController} = require('../controllers/index.controller')
-
 // const {updateUserController} = require('../controllers/index.controller')
 
 // middleware to log requests
 router.get('/',indexController )
-router.get('/register' , registerController)
+router.post('/register' , registerController)
 router.get('/users' , userController)
 router.get('/users/:name', cardController)
-// router.get('/updateUser' , updateUserController)
+// router.post('/submit-form' , updateUserController)
 // router.get('/deleteUser' , deleteUserController)
 module.exports = router;

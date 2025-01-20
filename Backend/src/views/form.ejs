@@ -16,46 +16,42 @@
       <div class="w-1/2 p-6 space-y-6 text-white">
         <h2 class="text-3xl font-semibold text-center text-gray-300">Create Your Profile</h2>
 
-        <!-- Name Input -->
-        <div>
-          <label for="name" class="block text-sm font-medium">Name</label>
-          <input type="text" id="name" name="name" class="w-full p-3 mt-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your name">
-        </div>
+        <form action="/register" method="POST" class="space-y-6">
+          <!-- Name Input -->
+          <div>
+            <label for="name" class="block text-sm font-medium">Name</label>
+            <input type="text" id="name" name="name" class="w-full p-3 mt-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your name">
+          </div>
 
-        <!-- Email Input -->
-        <div>
-          <label for="email" class="block text-sm font-medium">Email</label>
-          <input type="email" id="email" name="email" class="w-full p-3 mt-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your email">
-        </div>
+          <!-- Email Input -->
+          <div>
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input type="email" id="email" name="email" class="w-full p-3 mt-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your email">
+          </div>
 
-        <!-- Image URL Input -->
-        <div>
-          <label for="image_url" class="block text-sm font-medium">Image URL</label>
-          <input type="url" id="image_url" name="image_url" class="w-full p-3 mt-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter image URL">
-        </div>
+          <!-- Image URL Input -->
+          <div>
+            <label for="image_url" class="block text-sm font-medium">Image URL</label>
+            <input type="url" id="image_url" name="image_url" class="w-full p-3 mt-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter image URL">
+          </div>
 
-        <!-- Bio Textarea -->
-        <div>
-          <label for="bio" class="block text-sm font-medium">Bio</label>
-          <textarea id="bio" name="bio" class="w-full p-3 mt-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tell us about yourself" rows="4"></textarea>
-        </div>
+          <!-- Bio Textarea -->
+          <div>
+            <label for="bio" class="block text-sm font-medium">Bio</label>
+            <textarea id="bio" name="bio" class="w-full p-3 mt-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tell us about yourself" rows="4"></textarea>
+          </div>
 
-        <!-- Profile Section Input -->
-        <!-- <div>
-          <label for="profile_section" class="block text-sm font-medium">Profile Section</label>
-          <input type="text" id="profile_section" name="profile_section" class="w-full p-3 mt-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your profile section">
-        </div> -->
-        <form action="/submit-form" method="POST" class="mt-6">
-            <div class="flex justify-center">
-              <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                Submit
-              </button>
-            </div>
-          </form>
+          <!-- Submit Button -->
+          <div class="flex justify-center">
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+              Submit
+            </button>
+          </div>
+        </form>
       </div>
 
       <!-- Right Section: Image -->
-      <div class="w-1/2 h-1/2 bg-gray-700 flex justify-center items-center" style="height: 50%;">
+      <div class="w-1/2 bg-gray-700 flex justify-center items-center">
         <img src="https://i.pinimg.com/474x/09/9b/19/099b1941ee087f0da628b6fba8ba1d29.jpg" alt="Profile Image" class="rounded-lg shadow-lg w-full h-full object-cover">
       </div>
     </div>

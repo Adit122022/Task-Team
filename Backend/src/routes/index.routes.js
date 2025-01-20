@@ -1,16 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const {indexController, cardController} = require('../controllers/index.controller')
-const {registerController} = require('../controllers/index.controller')
+const {indexController } = require('../controllers/index.controller')
 const {userController} = require('../controllers/index.controller')
-// const {deleteUserController} = require('../controllers/index.controller')
-// const {updateUserController} = require('../controllers/index.controller')
 
+const userModel = require('../models/user.model');
 // middleware to log requests
 router.get('/',indexController )
-router.post('/register' , registerController)
-router.get('/users' , userController)
-router.get('/users/:name', cardController)
-// router.post('/submit-form' , updateUserController)
-// router.get('/deleteUser' , deleteUserController)
+
+router.get('/users', async (req, res) => {
+    try {
+        const users = await userModel.find(); // Fetch all users
+        res.render('card', { users }); // Render the card view with the users data
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        res.status(500).send("An error occurred while fetching users.");
+    }
+});
+
+router.post('/register' , userController)
+
 module.exports = router;

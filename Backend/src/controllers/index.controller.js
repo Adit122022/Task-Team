@@ -4,11 +4,13 @@ module.exports.indexController =(req,res)=>{
 }
 module.exports.registerController = async(req,res)=>{
     console.log(req.query);
-const { username , email , password } = req.query;
+const { username , email , bio ,profession , imageURL } = req.query;
     const newUser = new userModel({
         username,
         email,
-        password,
+        bio ,
+        profession ,
+        imageURL,
     });
     await newUser.save();
     res.send("Register");
@@ -18,10 +20,10 @@ module.exports.userController = async(req,res)=>{
     const users = await userModel.find();
     res.send(users);
 }
-module.exports.updateUserController = async(req,res)=>{
-    const users = await userModel.findOneAndUpdate({email:"a@a.com"},{username: req.query.username} );
-    res.send(users);
-}
+// module.exports.updateUserController = async(req,res)=>{
+//     const users = await userModel.findOneAndUpdate({email:req.query.email},{username: req.query.username} );
+//     res.send(users);
+// }
 
 module.exports.deleteUserController = async(req,res)=>{
     const users = await userModel.findOneAndDelete({email:req.query.email});

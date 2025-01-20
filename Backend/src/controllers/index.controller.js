@@ -17,16 +17,24 @@ const { username , email , bio ,profession , imageURL } = req.query;
 }
 
 module.exports.userController = async(req,res)=>{
-    const users = await userModel.find();
-    res.send(users);
+    // const users = await userModel.find();
+    // res.render('card');
+    const cards = [
+        { image: 'https://i.pinimg.com/736x/bb/65/bd/bb65bdeab14fcb2e332edcdfae569465.jpg', bio: 'sanjana', profession: 'UI/UX Designer' },
+        // Add more card objects here
+      ];
+      res.render('card', { cards }); 
 }
+
 // module.exports.updateUserController = async(req,res)=>{
 //     const users = await userModel.findOneAndUpdate({email:req.query.email},{username: req.query.username} );
 //     res.send(users);
 // }
+module.exports.cardController=async(req,res)=>{
+    const name=req.params.name;
 
-module.exports.deleteUserController = async(req,res)=>{
-    const users = await userModel.findOneAndDelete({email:req.query.email});
-    res.send(users);
+    res.render('card')
 }
+
+
 
